@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -50,7 +50,7 @@ namespace Sac1_Task_2
             }
 
         }
-        private void btnCalculate_Click(object sender, EventArgs e)
+        private void btnCalculate_Click(object sender, EventArgs e)       //When the 'Calculate' button is clicked
         {
             while (filepath==null || filepath.Contains("csv")==false)     //If filepath is undefined, prompt user to enter filepath until they do
             {
@@ -64,12 +64,13 @@ namespace Sac1_Task_2
             foreach (String Line in Lines)                   //For each line in the CSV file, split it, calculate the profit, and add to the datagridview
             {
                 List<string> LineAsList = Line.Split(',').ToList();
-                float fltTextbookProfit = calculateProfit(LineAsList[4], LineAsList[5]);
+                float fltTextbookProfit = calculateProfit(LineAsList[4], LineAsList[5]);   //Create a variable storing the profit for the current textbook
+
                 fltTextbookProfit = (float)Math.Round((double)fltTextbookProfit,2); //Round Textbook profit to the nearest 2 decimal places (to account for floating point imprecision)
 
                 dgvTable.Rows.Add(LineAsList[0], LineAsList[1], LineAsList[2], LineAsList[3], LineAsList[4], LineAsList[5], fltTextbookProfit);
-                
-                fltProfitTotal+=fltTextbookProfit;
+                                                                                                   //^^Add the CSV data as well as the calculated profit to the data grid view
+                fltProfitTotal+=fltTextbookProfit;                   //Add the current profit to the total profit
             }
 
             lblProfit.Text = "Total Profit: $"+fltProfitTotal.ToString();   //Change the profit label to the correct value
