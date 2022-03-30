@@ -113,15 +113,15 @@ namespace SAC_1_TASK_3
             Inputs: List of textbooks
             Outputs: Sorted list of textbooks
             */
-            for (int i = 0; i < lst.Count - 1; i++)
+            for (int i = 0; i < lst.Count - 1; i++)           //Iterate through each textbook
             {
                 
-                Textbook temp = lst[i];
-                int min_index = 0;
-                int min_value = 9999999;
+                Textbook temp = lst[i];          //The temporary textbook variable
+                int min_index = 0;               //Index of the minimum value
+                int min_value = 9999999;         //Value of the minimum vaalue, set to a very big number so any textbook rating is less than it
                 Textbook min_textbook = new Textbook("", "", "", 0, "", 0, 9999999);    //Arbitrary initialisation value
                 
-                for (int j = i; j < lst.Count; j++)
+                for (int j = i; j < lst.Count; j++)            //Iterate through all integers from i to the end of the list
                 {
 
 
