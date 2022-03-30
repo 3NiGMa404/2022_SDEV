@@ -77,7 +77,7 @@ namespace SAC_1_TASK_3
                 }
                 if ((Int32.TryParse(SplitLine[6], out intTempRating)) == false)
                 {
-                    intTempRating = -1;                                    //Attempt to convert the rating to an integer, otherwise set it to 0
+                    intTempRating = -1;                                    //Attempt to convert the rating to an integer, otherwise set it to -1 to reflect that it has not been rated
                 }
                 Textbook CurrentTextbook = new Textbook(SplitLine[0], SplitLine[1], SplitLine[2], float.Parse(SplitLine[4]), SplitLine[3], fltTempSalePrice, intTempRating);  //Create a textbook object with the values from the current line
             
